@@ -24,4 +24,9 @@ describe('CalculatorService', () => {
     expect(service.add('1,2,3')).toBe(6);
     expect(service.add('3,2,3')).toBe(8);
   });
+
+  it('should handle new lines as delimiters', () => {
+    expect(service.add('1\n2,3')).toBe(6);
+  });
+  
 });
