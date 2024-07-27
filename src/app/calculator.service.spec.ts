@@ -12,5 +12,9 @@ describe('CalculatorService', () => {
   it('should return 0 for an empty string', () => {
     expect(service.add('')).toEqual(0);
   });
+  it('should return the number for a single number input', () => {
+    expect(service.add('1')).toBe(1);
+    expect(service.add('3')).toBe(3);
+  });
   
 });
