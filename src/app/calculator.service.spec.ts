@@ -16,5 +16,9 @@ describe('CalculatorService', () => {
     expect(service.add('1')).toBe(1);
     expect(service.add('3')).toBe(3);
   });
+  it('should return the sum of two numbers', () => {
+    expect(service.add('1,2')).toBe(3);
+    expect(service.add('2,3')).toBe(5);
+  });
   
 });
