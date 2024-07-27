@@ -20,5 +20,8 @@ describe('CalculatorService', () => {
     expect(service.add('1,2')).toBe(3);
     expect(service.add('2,3')).toBe(5);
   });
-  
+  it('should return the sum of multiple numbers', () => {
+    expect(service.add('1,2,3')).toBe(6);
+    expect(service.add('3,2,3')).toBe(8);
+  });
 });
