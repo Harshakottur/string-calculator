@@ -19,7 +19,15 @@ export class CalculatorService {
     }
   
     numbers = numbers.replace(/\n/g, delimiter);
-    return numbers.split(delimiter).reduce((sum, num) => sum + parseInt(num, 10), 0);
+    const numberArray = numbers.split(delimiter);
+    
+    const negatives = numberArray.filter(num => parseInt(num, 10) < 0);
+    if (negatives.length > 0) {
+      throw new Error(`Negative numbers not allowed: ${negatives.join(', ')}`);
+    }
+  
+    return numberArray.reduce((sum, num) => sum + parseInt(num, 10), 0);
   }
+  
   
 }
